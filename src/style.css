@@ -1,0 +1,74 @@
+@import 'tailwindcss';
+
+/* ═══════════════════════════════════════
+   设计系统 — 天空蓝主题
+   字体: 仿宋 (FangSong / Noto Serif SC)
+   主色: 天空蓝 #7DD3FC → #38BDF8
+   点缀: 暖杏 #FBBF24
+   ═══════════════════════════════════════ */
+
+:root {
+  --color-sky-50: #F0F9FF;
+  --color-accent: #FBBF24;
+  --color-accent-glow: rgba(251, 191, 36, 0.3);
+  --tree-line-color: #94a3b8;
+  --node-hover-bg: #f0f9ff;
+}
+
+/* 全局字体 */
+html {
+  font-family: 'FangSong', 'STFangsong', 'Noto Serif SC', '仿宋', 'Songti SC', serif;
+}
+
+/* ═══ 滚动条 ═══ */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #94a3b8;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+/* ═══ 页面路由过渡 ═══ */
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.page-enter-from {
+  opacity: 0;
+  transform: translateY(10px);
+}
+.page-leave-to {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+/* ═══ Scroll Reveal 入场动画 ═══ */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 依次延迟 */
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+.reveal-delay-5 { transition-delay: 0.5s; }
+
+/* ═══ 选择区样式 ═══ */
+::selection {
+  background: rgba(56, 189, 248, 0.25);
+  color: #0C4A6E;
+}

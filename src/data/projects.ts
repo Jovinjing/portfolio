@@ -1,0 +1,62 @@
+import type { Project } from '../types/project'
+
+/**
+ * 项目数据
+ * 后续更新只需要修改这个文件
+ */
+export const projects: Project[] = [
+  {
+    id: 'zhujiawuyou',
+    title: '筑家无忧',
+    tagline: '基于生成式AI的智能空间设计平台',
+    techStack: ['Vue 3', 'Element Plus', 'Pinia', 'ECharts', 'Vite', 'Axios', 'LoRA', 'ControlNet'],
+    description: `面向装修与空间设计场景的生成式 AI 应用平台，包含 Web 管理端、Web 前台及微信小程序，实现从风格/空间选择、户型图上传、AI 效果图生成与局部修改，到预算装修建议、作品推荐与社区互动的一体化业务流程。`,
+    contributions: [
+      '负责 Web 管理端前端开发，使用 Vue 3 + Element Plus + Pinia 搭建核心业务模块，对接后端 API 并保障可用性与稳定性',
+      '使用 ECharts 搭建用户画像可视化大屏，包括地域分布地图、年龄与性别统计、预算趋势折线图及关键词词云，支撑运营决策',
+      '重构全局状态管理（Vuex → Pinia），结合持久化插件实现 Token 与购物车数据本地存储，减少重复请求',
+      '构建流式对话渲染模块，基于 ReadableStream + TextDecoder 解析 SSE 数据流，实现逐 token 输出与滚动跟随',
+      '引入虚拟列表（vue-virtual-scroller）优化长对话场景，显著降低 DOM 渲染与内存开销',
+      '在 LibLib 平台进行 LoRA 微调与 Checkpoint 基础模型微调，实现 6 种家具风格模型（现代、北欧、工业、新中式、轻奢、田园）；采用 ControlNet 控制户型结构 + IP-Adapter 风格迁移，风格还原度提升约 30%',
+    ],
+    images: ['/screenshots/zhujiawuyou-home.png', '/screenshots/zhujiawuyou-admin.png', '/screenshots/zhujiawuyou-ai.png', '/screenshots/zhujiawuyou-voice.png', '/screenshots/zhujiawuyou-budget.png', '/screenshots/zhujiawuyou-profile.png'],
+    demoVideo: 'https://player.bilibili.com/player.html?bvid=BV1WwN96uEpV&page=1&autoplay=0&danmaku=0',
+    demoUrl: '',
+    githubUrl: 'https://github.com/Jovinjing/zhujiawuyou',
+  },
+  {
+    id: 'qiaoxingzhijian',
+    title: '桥形智见',
+    tagline: '桥型文化数据可视化平台',
+    techStack: ['Three.js', 'GLTF', '高德地图 API', 'ECharts', 'JavaScript'],
+    description: `以三座经典桥梁为主题的 3D 数据可视化平台。通过 Three.js 将 GLTF 三维桥梁模型嵌入网页，结合高德地图 API 实现卫星定位展示，并利用 ECharts 呈现桥梁相关的文化数据与统计分析。`,
+    contributions: [
+      '独立完成三座桥梁的 3D 建模，使用 Blender 制作并导出 GLTF 格式模型',
+      '基于 Three.js 将 GLTF 模型嵌入网页，实现视角控制、模型交互与动画过渡',
+      '接入高德地图 API 实现桥梁地理位置的卫星定位与地图展示',
+      '使用 ECharts 实现桥梁文化数据可视化，包括历史年代对比、结构参数等图表展示',
+    ],
+    images: ['/screenshots/qiaoxingzhijian-1.png', '/screenshots/qiaoxingzhijian-2.png', '/screenshots/qiaoxingzhijian-3.png'],
+    demoVideo: 'https://player.bilibili.com/player.html?bvid=BV1kNN96TEtM&page=1&autoplay=0&danmaku=0',
+    demoUrl: '',
+    githubUrl: 'https://github.com/Jovinjing/zhaozhoubridge',
+  },
+  {
+    id: 'zhaozhouqiao',
+    title: '赵州桥科普小程序',
+    tagline: '融合 AI 大模型的沉浸式文物科普微信小程序',
+    techStack: ['微信小程序', 'Spring Cloud', 'LangChain4j', 'MySQL', 'Redis', 'Java', 'Eureka', 'Zuul'],
+    description: `以赵州桥为主题的科普教育微信小程序，结合 AI 大模型（LangChain4j）实现智能讲解与多轮对话功能。同时集成文创商品在线购买、门票预约、热力图统计等业务模块，通过 Spring Cloud 微服务架构提供完整的后端支持。`,
+    contributions: [
+      '搭建 Spring Cloud 微服务架构，包括 Eureka 注册中心、Zuul 网关、Config 配置中心及多个业务微服务（商品、订单、文创、用户）',
+      '基于 LangChain4j 集成大语言模型，实现 AI 智能讲解功能，支持对赵州桥各构件（主拱、腹拱、栏板等）进行深度科普多轮对话',
+      '开发微信小程序前端，采用分包加载优化性能，实现全景展示、文创商店、门票预约、个人中心等完整功能',
+      '设计 MySQL 数据库表结构（用户、商品、订单、文创、门票热力图等），集成 Redis 缓存提升接口响应速度',
+      '编写冒烟测试与 Postman 测试集合，通过 Newman 自动化测试保障服务稳定性',
+    ],
+    images: ['/screenshots/zhaozhouqiao-profile.png', '/screenshots/zhaozhouqiao-ai.png', '/screenshots/zhaozhouqiao-panorama.png', '/screenshots/zhaozhouqiao-login.png', '/screenshots/zhaozhouqiao-shop.png', '/screenshots/zhaozhouqiao-order.png', '/screenshots/zhaozhouqiao-ticket.png'],
+    demoVideo: 'https://player.bilibili.com/player.html?bvid=BV1HNN96TEDe&page=1&autoplay=0&danmaku=0',
+    demoUrl: '',
+    githubUrl: 'https://github.com/Jovinjing/Zhaozhou-Bridge-Explorer-',
+  },
+]
