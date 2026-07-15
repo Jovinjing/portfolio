@@ -127,7 +127,7 @@ function createBlob(i: number): Blob {
 
 const blobs: Blob[] = Array.from({ length: 20 }, (_, i) => createBlob(i))
 
-function initBlobs(w: number, h: number) {
+function initBlobs(w: number, _h: number) {
   for (const b of blobs) {
     // 扁椭圆：x 半径大，y 半径小（~1/4 的 x 半径）
     b.rx = w * b.baseSize

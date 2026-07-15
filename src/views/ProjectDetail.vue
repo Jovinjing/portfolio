@@ -52,10 +52,11 @@ function playVideo() {
   }, 100)
 }
 
-const columns = computed(() => {
-  const n = project.value?.images.length ?? 0
-  return Math.min(n, 4)
-})
+// 缩略图列数（保留给将来可能的 grid 布局用）
+// const columns = computed(() => {
+//   const n = project.value?.images.length ?? 0
+//   return Math.min(n, 4)
+// })
 </script>
 
 <template>

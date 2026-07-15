@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted } from 'vue'
 
 // ── 模型配置 ──
 const CONFIG = {
@@ -39,6 +39,7 @@ async function loadModel() {
     tokenizer = buildTokenizer(tokJson)
 
     loadDetail.value = '正在下载模型 (~10 MB)...'
+// @ts-ignore — onnxruntime-web CDN module has no types
     ortModule = await import('https://cdn.jsdelivr.net/npm/onnxruntime-web@1.21.0/dist/ort.min.mjs')
     ortModule.env.wasm.wasmPaths = 'https://cdn.jsdelivr.net/npm/onnxruntime-web@1.21.0/dist/'
 
@@ -171,7 +172,7 @@ function buildTokenizer(json: any) {
 
   const mergeRank: Record<string, number> = {}
   for (let i = 0; i < merges.length; i++) {
-    const key = Array.isArray(merges[i]) ? merges[i].join(' ') : merges[i]
+    const key = Array.isArray(merges[i]) ? (merges[i] as unknown as string[]).join(' ') : merges[i]
     mergeRank[key] = i
   }
 
