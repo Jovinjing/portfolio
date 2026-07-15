@@ -72,7 +72,7 @@ onUnmounted(() => {
 				px-5 py-3 rounded-2xl
 				bg-gradient-to-b from-white/85 to-white/70 backdrop-blur-md
 				border border-white/60 shadow-[0_2px_8px_rgba(0,0,0,0.04),0_8px_24px_rgba(0,0,0,0.06)]
-				max-w-md mx-auto
+				w-max max-w-[90vw] mx-auto
 			"
 		>
 			<p class="text-base md:text-lg text-slate-700 font-medium leading-relaxed text-center min-h-[1.75rem]">
